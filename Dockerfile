@@ -17,10 +17,10 @@ ENV PYTHONUNBUFFERED 1
 
 # Install OS dependencies for our mini VM
 RUN apt-get update && apt-get install -y \
-    libpq-dev \        # for PostgreSQL
-    libjpeg-dev \      # for Pillow
-    libcairo2 \        # for CairoSVG
-    gcc \              # for compiling C extensions
+    libpq-dev \
+    libjpeg-dev \      # for Pillow \
+    libcairo2 \        # for CairoSVG \
+    gcc \              # for compiling C extensions \
     && rm -rf /var/lib/apt/lists/*
 
 # Create the mini VM's code directory
