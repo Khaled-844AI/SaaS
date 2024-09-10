@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block head_title %} {{ page_title }} - {{ block.super }}
+{%  endblock %}
+
+{% block  content %}
+    <div class="text-lg font-medium"><a href="/profiles/{{ instance.username }}">{{ instance.username }}</a></div>
+    {% if perms.auth or owner %}
+        {% if perms.auth.view_user or owner %}
+            <div>
+                 {{ instance.first_name }} - {{ instance.last_name }}
+                 {{ instance.last_login }}
+            </div>
+        {% else %}
+            you are not allowed to check this
+        {% endif %}
+    {% endif %}
+{% endblock %}
