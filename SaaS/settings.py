@@ -45,6 +45,7 @@ if all([ADMIN_USER_NAME, ADMIN_USER_EMAIL]):
 SECRET_KEY = config('DJANGO_SECRET_KEY', default=None)
 
 LOGIN_URL = '/accounts/login/'
+BASE_URL = config('BASE_URL', default=None)
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DJANGO_DEBUG', default=bool)
@@ -77,6 +78,7 @@ INSTALLED_APPS = [
     'profiles',
     'subscriptions',
     'customers',
+    'checkouts',
     'allauth_ui',
     'allauth',
     'allauth.account',

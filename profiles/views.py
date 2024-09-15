@@ -21,12 +21,6 @@ def profiles_list(request):
 @login_required
 def profile_detail_view(request, username):
     user = request.user
-    print(
-        user.has_perm('subscriptions.basic'),
-        user.has_perm('subscriptions.pro'),
-        user.has_perm('subscriptions.advanced'),
-        user.has_perm('subscriptions.basic_ai'),
-          )
     user_groups = user.groups.all()
     if user_groups.filter(name__icontains='basic').exists():
         return HttpResponse("Congrats !!!")

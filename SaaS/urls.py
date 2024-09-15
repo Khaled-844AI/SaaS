@@ -26,6 +26,8 @@ urlpatterns = [
     path('register/', auth_views.register_view, name="register"),
     path('accounts/', include('allauth.urls')),
     path('profiles/', include('profiles.urls')),
+    path('subscriptions/', include('subscriptions.urls')),
+    path('checkout/', include('checkouts.urls')),
 
     path('protected/staff-only' , views.staff_page , name="protected"),
 ]
